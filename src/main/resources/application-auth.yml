@@ -1,0 +1,5 @@
+jwt:
+  secret: "b4uoxaI7dlRSlTEYbvEt9XaWcToKM6pkPQxtyvnUs+M="
+  accessExpiredTime: 60000 # 1 분
+  refreshExpiredTime: 86400000 # 1 일
+  issuer: "http://localhost:8080"

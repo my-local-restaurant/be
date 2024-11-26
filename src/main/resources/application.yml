@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    group:
+      common: auth
+      local: common
+      dev: common
+    active: local
+
+
