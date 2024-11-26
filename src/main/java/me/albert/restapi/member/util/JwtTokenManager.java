@@ -6,10 +6,7 @@ import io.jsonwebtoken.security.Keys;
 import java.util.Date;
 import javax.crypto.SecretKey;
 import me.albert.restapi.common.exception.IllegalTokenException;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
-@Component
 public class JwtTokenManager {
 
     private final SecretKey secretKey;
@@ -18,10 +15,10 @@ public class JwtTokenManager {
     private final String issuer;
 
     public JwtTokenManager(
-            @Value("${jwt.secret}") String secret,
-            @Value("${jwt.accessExpiredTime}") long accessExpiredTime,
-            @Value("${jwt.refreshExpiredTime}") long refreshExpiredTime,
-            @Value("${jwt.issuer}") String issuer
+            String secret,
+            long accessExpiredTime,
+            long refreshExpiredTime,
+            String issuer
     ) {
         this.secretKey = Keys.hmacShaKeyFor(Decoders.BASE64.decode(secret));
         this.accessExpiredTime = accessExpiredTime;
